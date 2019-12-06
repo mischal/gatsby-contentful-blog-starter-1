@@ -15,7 +15,7 @@ const BlogPosts = ({ data }) => {
           </div>
         ))}
         <span className="mgBtm__24" />
-        <Link to="/">Go back to the homepage</Link>
+        <Link to="/">Go back to the homepage YALLAH</Link>
       </div>
     </Layout>
   );
