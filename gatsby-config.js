@@ -37,7 +37,8 @@ module.exports = {
       options: {
         spaceId: `bldtk2ft045j`,
         accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
-        host: process.env.GATSBY_CONTENTFUL_HOST
+        host: process.env.GATSBY_CONTENTFUL_HOST,
+        environment: process.env.GATSBY_CONTENTFUL_ENV
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
