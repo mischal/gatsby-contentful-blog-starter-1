@@ -20,6 +20,18 @@ const options = {
 }
 
 
+
+
+const sample = [{
+    linkUrl: 'https://ebanking.ch',
+    linkText: 'E-Bankgin'
+}, {
+    linkUrl: 'www.google.ch',
+    linkText: 'google'
+}
+];
+
+
 const site1 = ({data}) => {
     return (
         <Layout>
@@ -27,13 +39,11 @@ const site1 = ({data}) => {
                 <h1>{data.contentfulContent.siteTitle}</h1>
                 <div>
                     <h3>{data.contentfulContent.title}</h3>
-
                     <div>
-
                         {documentToReactComponents(data.contentfulContent.content.json, options)}
                     </div>
                     <div style={{float: `left`}}>
-                        <Linkbox></Linkbox>
+                        <Linkbox links={data.contentfulContent.linkBox.links}></Linkbox>
                     </div>
                 </div>
             </div>

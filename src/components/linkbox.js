@@ -1,10 +1,21 @@
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Test from "./test"
+import Link from "./link"
+import {useStaticQuery, graphql} from "gatsby"
 
-const Linkbox = ({data}) => {
-    const { site } = useStaticQuery(
+/*
+const sample = [{
+    url: 'https://ebanking.ch',
+    text: 'E-Bankgin'
+}, {
+    url: 'www.google.ch',
+    text: 'google'
+}
+];*/
+
+const Linkbox = (props) => {
+    const {site} = useStaticQuery(
         graphql`
       query {
         site {
@@ -17,15 +28,18 @@ const Linkbox = ({data}) => {
     )
     return (
         <>
-           <div>ich bin eine Linkbox
-               {site.siteMetadata.title}
-           </div>
+            <Test/>
+            <ul className="linkList">
+                {props.links.map((value, index) => {
+                        return <li className="linkList"><Link url={value.linkUrl} text={value.linkText}/></li>
+                })}
+            </ul>
         </>
     )
 
 
- }
- Linkbox.propTypes = {
+}
+Linkbox.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
